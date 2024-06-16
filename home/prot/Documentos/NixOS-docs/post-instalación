@@ -1,0 +1,27 @@
+Luego de instalar NixOS y añadir "git" como paquete en el archivo configuration.nix, ejecutar los siguientes comandos:
+
+Clona el repositorio github y abre este mismo documento:
+
+git clone https://github.com/jfx01/nixos-config/
+nano etc/nixos/home/prot/Documentos/NixOS-docs/post-instalación
+
+Para generar las carpetas del directorio home:
+
+xdg-user-dirs-update
+
+Para actualizar NixOS a la versión inestable:
+
+sudo nix-channel --add https://channels.nixos.org/nixos-unstable nixos
+sudo nixos-rebuild switch --upgrade
+
+Para cambiar el propietario de la carpeta /etc/nixos al usuario actual:
+
+sudo chown -R prot /etc/nixos
+
+Ahora sí, borrar los antiguos archivos del directorio /etc/nixos y copiar los nuevos ficheros y directorios de configuración a su correspondiente lugar.
+
+Ejecutar después de realizado el paso anterior:
+
+sudo nixos-rebuild switch
+
+Y por último, reiniciar.

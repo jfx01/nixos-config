@@ -1,0 +1,7 @@
+Elimina los paquetes de las generaciones que tengan más de dos días de antigüedad:
+
+sudo nix-collect-garbage --delete-older-than 2d
+
+Actualiza las entradas del grub con la nueva lista de generaciones:
+
+sudo nixos-rebuild boot
