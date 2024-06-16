@@ -1,0 +1,266 @@
+// -*- mode: json -*-
+
+{
+	"layer": "top",
+	"output": "HDMI-A-1",
+	"position": "bottom",
+	"height": 34,
+	"width": 1240,
+	"margin": 5,
+
+	"modules-left": [
+		"custom/menu",
+		"custom/space",
+		"custom/launcher-1",
+		"custom/launcher-2",
+		"custom/launcher-3",
+		"custom/launcher-4",
+		"custom/space",
+		"wlr/taskbar",
+	],
+	"modules-center": [
+	],
+	"modules-right": [
+		"custom/weather",
+		"tray",
+		"pulseaudio",
+		"custom/notification",
+		"clock#3",
+		"custom/power",
+	],
+
+	"custom/space": {
+		"format": "| ",
+		"tooltip": false
+	},
+
+	"custom/menu": {
+		"format": "󰍜",
+		"on-click": "wofi --show drun",
+		"tooltip": true,
+		"tooltip-format": "Menú"
+	},
+
+	"hyprland/workspaces": {
+		"format": " {icon} {windows} ",
+  		"format-window-separator": " ",
+  		"window-rewrite-default": "",
+  		"window-rewrite": {
+    		"firefox": "",
+    		"terminator": "",
+			"pcmanfm": "",
+    		"code": "󰨞",
+			"mousepad": "",
+			"galculator": "",
+			"atril": "",
+			"gimp": "",
+			"vlc": "󰕼",
+			"eom": "",
+			"catfish": "",
+			"abiword": "",
+		},
+	},
+
+	"custom/launcher-1": {
+		"format": "",
+		"on-click": "terminator",
+		"tooltip": true,
+		"tooltip-format": "Terminator",
+	},
+
+	"custom/launcher-2": {
+		"format": "",
+		"on-click": "pcmanfm",
+		"tooltip": true,
+		"tooltip-format": "PCManFM",
+	},
+
+	"custom/launcher-3": {
+		"format": "󱞎",
+		"on-click": "mousepad",
+		"tooltip": true,
+		"tooltip-format": "Mousepad",
+	},
+
+	"custom/launcher-4": {
+		"format": "󰈹",
+		"on-click": "firefox",
+		"tooltip": true,
+		"tooltip-format": "Navegador Firefox",
+	},
+
+	"hyprland/window": {  
+		"format": "{}",
+		"icon": true,
+		"max-length": 50,
+	},
+
+	"wlr/taskbar": {
+    		"format": "{icon}",
+    		"icon-size": 20,
+    		"icon-theme": "Gruvbox-Plus-Dark",
+    		"tooltip-format": "{title}",
+    		"on-click": "minimize-raise",
+    		"on-click-middle": "close",
+    		"ignore-list": [
+       		"Conky"
+    		],
+	},
+
+	"clock#1": {
+		"timezone": "America/Argentina/Buenos_Aires",
+		"locale": "es_AR.UTF-8",
+		"format": "{:L%a}",
+		"tooltip": false
+	},
+
+	"clock#3": {
+		"timezone": "America/Argentina/Buenos_Aires",
+		"locale": "es_AR.UTF-8",
+		"format": " {:L%H:%M} ",
+		"on-click": "orage",
+		"tooltip-format": "{:L%A, %d de %B, %Y}",
+		/*
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode": "year",
+			"mode-mon-col": 3,
+			"weeks-pos": "right",
+			"on-scroll": 1,
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"days": "<span color='#ffffff'><b>{}</b></span>",
+				"weeks": "<span color='#377c81'><b>{}</b></span>",
+				"weekdays": "<span color='#ddc7a1'><b>{}</b></span>",
+				"today": "<span color='yellow'><b><u>{}</u></b></span>"
+			}
+		},
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+		*/
+	},
+
+	"clock#2": {
+		"timezone": "America/Argentina/Buenos_Aires",
+		"locale": "es_AR.UTF-8",
+		"format": "{:L%d-%m}",
+		"tooltip": false
+	},
+
+	"pulseaudio": {
+		"format": " {icon}  {volume:2}% ",
+		"format-bluetooth": "{icon} {volume}%",
+		"format-muted": "  Mute",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				""
+			]
+		},
+		"scroll-step": 5,
+		"on-click": "pamixer -t",
+		"on-click-right": "pwvucontrol"
+	},
+
+	"memory": {
+		"interval": 5,
+		"format": "Mem {}%"
+	},
+
+	"cpu": {
+		"interval": 5,
+		"format": "CPU {usage:2}%"
+	},
+
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+
+	"disk#1": {
+		"interval": 5,
+		"format": "Root {percentage_used:2}%",
+		"path": "/"
+	},
+
+	"disk#2": {
+		"interval": 5,
+		"format": "Home {percentage_used:2}%",
+		"path": "/home"
+	},
+
+	"custom/zypper": {
+        	"format": "{} ",
+        	"interval": 3600,
+        	"exec": "zypper lu | grep 'v |' | wc -l; echo 'Paquetes a actualizar'",
+        	"exec-if": "exit 0",
+        	"on-click": "exec alacritty -e sudo sh -c 'zypper ref; zypper dup; pkill -SIGRTMIN+8 waybar'",
+        	"signal": 8
+    	},
+
+	"custom/show-desktop": {
+        	"format": " 👁️ ",
+        	"interval": 3600,
+        	"on-click": "wlrctl toplevel minimize; wlrctl toplevel focus app_id:Conky",
+			"on-click-right": "wlrctl toplevel focus state:minimized",
+			"exec": "echo 'Mostrar escritorio'"
+    	},
+
+	"custom/power": {
+		"format": " ⏻ ",
+		"on-click": "nwg-bar",
+		"tooltip": true,
+		"tooltip-format": "Cerrar sesión...",
+	},
+
+	"custom/weather": {
+		"format": " {}° ",
+		"tooltip": true,
+		"interval": 3600,
+		"exec": "wttrbar",
+		"return-type": "json"
+	},
+
+	"custom/notification": {
+		"tooltip": false,
+		"format": " {icon} {} ",
+		"format-icons": {
+		  "notification": "<span foreground='red'><sup></sup></span>",
+		  "none": "",
+		  "dnd-notification": "<span foreground='red'><sup></sup></span>",
+		  "dnd-none": "",
+		  "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+		  "inhibited-none": "",
+		  "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+		  "dnd-inhibited-none": ""
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	  },
+
+	"tray": {
+		"icon-size": 24,
+		"spacing": 10
+	},
+}

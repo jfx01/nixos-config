@@ -1,0 +1,173 @@
+* {
+	font-size: 12px;
+	font-weight: bold;
+	font-family: monospace;
+	padding: 0;
+	margin: 0;
+}
+
+window#waybar {
+	/* background: #1b1f20; */
+	background: #1c2021;
+	color: #ddc7a1;
+	border: solid 2px #ddc7a1;
+	border-radius: 20px;
+}
+
+#custom-menu {
+	padding-left: 15px;
+	padding-right: 10px;
+	font-size: 24px;
+}
+
+#custom-menu:hover {
+	color: #ffedce;
+}
+
+#custom-launcher-1,
+#custom-launcher-2,
+#custom-launcher-3,
+#custom-launcher-4 {
+	padding-right: 15px;
+	font-size: 18px;
+}
+
+#custom-launcher-1:hover,
+#custom-launcher-2:hover,
+#custom-launcher-3:hover,
+#custom-launcher-4:hover {
+	font-size: 20px;
+}
+
+#custom-zypper {
+	color: #4c9141;
+}
+
+#custom-power {
+	font-size: 18px;
+	margin-right: 10px;
+	margin-left: -4px;
+}
+
+#custom-power:hover {
+	color: red;
+}
+
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#custom-weather,
+#custom-notification {
+	font-size: 14px;
+}
+
+#workspaces,
+#pulseaudio,
+#custom-weather,
+#memory,
+#cpu,
+#battery,
+#disk.1,
+#disk.2,
+#clock.3,
+#tray {
+/* ... */
+}
+
+#pulseaudio:hover,
+#custom-weather:hover,
+#custom-notification:hover,
+#memory:hover,
+#cpu:hover,
+#battery:hover,
+#disk.1:hover,
+#disk.2:hover,
+#clock.3:hover {
+	background: #3c3836;
+	color: #ffe5b9;
+	border-radius: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#tray .active:hover {
+	background: #3c3836;
+	border-top: solid 2px #ddc7a1;
+	border-bottom: solid 2px #ddc7a1;
+	color: #ffe5b9;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#workspaces {
+	/* ... */
+}
+
+#workspaces button {
+	color: #fdf6e3;
+	margin-right: 5px;
+}
+
+#workspaces button.active {
+	background: #377c81;
+	border-radius: 5px;
+	margin: 5px;
+}
+
+#workspaces button.urgent {
+	background: #cc4116;
+	border-radius: 5px;
+	margin: 5px;
+}
+
+#workspaces button:hover {
+	/* ... */
+}
+
+#memory {
+	color: #ffffff;
+}
+
+#cpu {
+	color: #ffffff;
+}
+
+#battery {
+	color: #ffffff;
+}
+
+#disk.1 {
+	color: #ffffff;
+}
+
+#disk.2 {
+	color: #ffffff;
+}
+
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk.1 #disk.2 {
+	padding: 0 2px;
+}
+
+#taskbar {
+	/* ... */
+}
+
+#taskbar button {
+	padding: 0 7 0;
+	margin: 3px;
+}
+
+#taskbar button.active {
+	background: rgb(90, 83, 62);
+	border-radius: 0px;
+}
+
+#tray {
+	padding: 0 5 0;
+}

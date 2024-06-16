@@ -1,0 +1,5 @@
+profile default  {
+    output HDMI-A-1 mode 1280x960 position 0,0
+    output DP-1 mode 1024x768 position 1280,0
+    # output Virtual-1 mode 1280x960 position 0,0
+}

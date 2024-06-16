@@ -1,0 +1,10 @@
+{
+	"bookmarks" : "/home/prot/.config/radiotray-ng/bookmarks.json",
+	"last-station" : "Jupiter Broadcasting",
+	"last-station-group" : "Community",
+	"last-station-notifications" : true,
+	"notification-verbose" : true,
+	"notifications" : true,
+	"split-title" : true,
+	"volume-level" : 80
+}
